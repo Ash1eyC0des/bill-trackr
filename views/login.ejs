@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bill Trackr</title>
 </head>
 <body>
+    <img class="logo-img" src="/images/Billtrackr-logo/cover.png" alt="">
+
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
@@ -17,10 +23,16 @@
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <form action="/login" method="POST">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
+    <form class="sigin-form" action="/login" class='login-form' method="POST">
+        <section class="form-text">
+            <h1>Welcome back!</h1>
+            <p>Login to continue using Billtrackr</p>
+        </section>
+        <input type="email" name="email" placeholder="Enter email">
+        <input type="password" name="password" placeholder="Enter password">
+        <button type="submit" class="login-button">Login</button>
     </form>
+
+    <a class="login-signup-btn" href="/signup">Don't have an account? Sign up here!</a>
 </body>
 </html>
