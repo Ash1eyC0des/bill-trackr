@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Now-Regular
+font link: https://hanken.co/product/now/
+font author: Hanken Design Co.
+font author site: https://hanken.co/
+
+
+icon designer: Lemon Liu
+icon designer link: /lemonliu
+        
+{"bg":"#48B68D","icon":"#294F58","font":"#294F58","slogan":"#3d636c"}
+      
