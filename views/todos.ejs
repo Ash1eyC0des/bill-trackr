@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bills</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/d5ce7117b5.js" crossorigin="anonymous"></script>
 </head>
 <body>
     
@@ -19,18 +22,26 @@
             <form class="signup-form add-bill-form" action="/todos/createTodo" method='POST'>
                 <h2>New Bill</h2>
                 <input type="text" placeholder="Enter bill here" name='todoItem'>
-                <input type="number" placeholder="Enter amount here" name='todoItem'>
-                <input type="date" placeholder="Enter pay date here" name='todoItem'>
+                <input type="number" placeholder="Enter amount here" name='amount'>
+                <input type="date" placeholder="Enter pay date here" name='date'>
                 <input type="submit"> 
             </form>
         </section>
         <section class="bill-list">
             <h2>My Outstanding Bills</h2>
             <ul>
+                <li>
+                    <span>Bill</span>
+                    <span>Amount</span>
+                    <span>Due Date</span>
+                    <span>Delete</span>
+                </li>
                 <% todos.forEach( el => { %>
                         <li class='todoItem' data-id='<%=el._id%>'>
                             <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                            <span class='del'> Delete </span>
+                            <span><%= el.amount %>$</span>
+                            <span><%= `${new Date(el.date).getDay()}/${new Date(el.date).getMonth()}` %></span>
+                            <span class='del fa-solid fa-trash'></span>
                         </li>
                 <% }) %>    
             </ul>
