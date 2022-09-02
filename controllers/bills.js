@@ -14,7 +14,7 @@ module.exports = {
     getPaid: async (req,res)=>{
         console.log(req.user)
         try{
-            const billItems = await Bill.find({userId:req.user.id, paid: true})//.toArray()
+            const billItems = await Bill.find({userId:req.user.id, paid: true}).sort({dueDate: 1})//.toArray()
             // const paidBills = billItems.filter(bill => bill.paid)
             const itemsLeft = await Bill.countDocuments({userId:req.user.id,completed: false})
             res.render('paidbills.ejs', {bills: billItems, left: itemsLeft, user: req.user})
@@ -25,7 +25,7 @@ module.exports = {
     getUnpaid: async (req,res)=>{
         console.log(req.user)
         try{
-            const billItems = await Bill.find({userId:req.user.id, paid: false})//.toArray()
+            const billItems = await Bill.find({userId:req.user.id, paid: false}).sort({dueDate: 1})//.toArray()
             // const unpaidBills = billItems.filter(bill => !bill.paid)
             const itemsLeft = await Bill.countDocuments({userId:req.user.id,completed: false})
             res.render('bills.ejs', {bills: billItems, left: itemsLeft, user: req.user})
@@ -34,8 +34,9 @@ module.exports = {
         }
     },
     createBill: async (req, res)=>{
+        console.log(req.body)
         try{
-            await Bill.create({bills: req.body.billItem, paid: false, userId: req.user.id})
+            await Bill.create({bill: req.body.billItem, paid: false, userId: req.user.id, dueDate: req.body.date, amount: req.body.amount})
             console.log('Bill has been added!')
             res.redirect('/bills')
         }catch(err){
@@ -45,7 +46,7 @@ module.exports = {
     markPaid: async (req, res)=>{
         try{
             await Bill.findOneAndUpdate({_id:req.body.billIdFromJSFile},{
-                completed: true
+                paid: true
             })
             console.log('Marked Paid')
             res.json('Marked Paid')

@@ -4,28 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bill Trackr</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Bills</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/d5ce7117b5.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Bills</h1>
-    <ul>
-    <% bills.forEach( el => { %>
-            <li class='billItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.bill %></span>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul>
+    
+    <h1>My Bills</h1>
 
-    <h2><%= user.userName %> has <%= left %> bills left to pay.</h2>
+    <h2><%= user.userName %> has <%= bills.filter(bill => bill.paid === false).length %> bill(s) outstanding</h2>
 
-    <form action="/bills/createBill" method='POST'>
-        <input type="text" placeholder="Enter Bill" name='billItem'>
-        <input type="submit">
-    </form>
+    <section class="bills-section">
+        
+        <section class="bill-form">
+            <form class="signup-form add-bill-form" action="/bills/createBill" method='POST'>
+                <h2>New Bill</h2>
+                <input type="text" placeholder="Enter bill here" name='billItem'>
+                <input type="number" placeholder="Enter amount here" name='amount'>
+                <input type="date" placeholder="Enter pay date here" name='date'>
+                <input type="submit"> 
+            </form>
+        </section>
+        <section class="bill-list">
+            <h2>My Outstanding Bills</h2>
+            <ul>
+                <li>
+                    <span>Bill</span>
+                    <span>Amount</span>
+                    <span>Due Date</span>
+                    <span>Delete</span>
+                    <span>Mark Paid</span>
+                </li>
+                <% bills.filter(bill => bill.paid === false).forEach( el => { %>
+                        <li class='billItem' data-id='<%=el._id%>'>
+                            <span><%= el.bill %></span>
+                            <span><%= el.amount %>$</span>
+                            <span><%= el.dueDate.toDateString() %></span>
+                            <span class='del fa-solid fa-trash'></span>
+                            <span class="not fa-solid fa-check"></span>
+                        </li>
+                <% }) %>    
+            </ul>
+        </section>
+    </section>
+    <a class="logout-btn" href="/logout">Logout</a>
+    <a class="unpaid-btn" href="/bills/paid">Go to Paid Bills</a>
 
-    <a href="/logout">Logout</a>
 
     <script src="/js/main.js"></script>
 </body>

@@ -24,6 +24,10 @@ const BillSchema = new mongoose.Schema({
   paidDate: {
     type: Date,
     required: false
+  },
+  userId: {
+    type: String,
+    required: true
   }
 })
 
