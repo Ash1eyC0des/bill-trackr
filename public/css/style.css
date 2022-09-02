@@ -129,6 +129,12 @@ ul {
     top: 0;
     padding: 10px;
 }
+.unpaid-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+}
 .add-bill-form input{
     font-size: 15px;
 }
@@ -145,5 +151,25 @@ ul {
 .bill-list li span{
     width: 100px;
     height: 30px;
-    text-align: left;
+    text-align: center;
 }
+
+.billItem span {
+    font-size: 10px;
+}n
+
+
+
+/* paid bills start */
+
+ .paid-bills-section {
+     display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.paid-bills {
+    width: 80%;
+
+}
+/* paid bills end */

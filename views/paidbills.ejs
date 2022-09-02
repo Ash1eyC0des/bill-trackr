@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paid Bills</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/d5ce7117b5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <h1>My Bills</h1>
+
+    <h2><%= user.userName %> has paid <%= bills.length %> bills! </h2>
+
+    <section class="bills-section paid-bills-section">
+        
+        <section class="bill-list paid-bills">
+            <h2>My Paid Bills</h2>
+            <ul>
+                <li>
+                    <span>Bill</span>
+                    <span>Amount</span>
+                    <span>Paid Date</span>
+                    <span>Delete</span>
+                </li>
+                <% bills.forEach( el => { %>
+                        <li class='billItem' data-id='<%=el._id%>'>
+                            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.bill %></span>
+                            <span><%= el.amount %>$</span>
+                            <span><%= el.dueDate.toDateString() %></span>
+                            <span class='del fa-solid fa-trash'></span>
+                        </li>
+                <% }) %>    
+            </ul>
+        </section>
+    </section>
+    <a class="logout-btn" href="/logout">Logout</a>
+    <a class="unpaid-btn" href="/bills/unpaid">Go to Outstanding Bills</a>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
