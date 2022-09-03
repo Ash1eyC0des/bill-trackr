@@ -22,7 +22,7 @@ Created to help anyone keep track of monthly bills and expenses. Carefully desig
 
 # Packages/Dependencies used 
 
-express, mongoose, passport, express-sessions, connect-mongo, express-flash,morgan, dotenv, ejs,  morgan, nodemon, passport-local, and validator
+express, mongoose,mongodb, bcrypt, passport, express-sessions, connect-mongo, express-flash, morgan, dotenv, ejs,  morgan, nodemon, passport-local, and validator
 
 ---
 
@@ -46,6 +46,8 @@ express, mongoose, passport, express-sessions, connect-mongo, express-flash,morg
  Miranda Ganger,
  Ned,
  Issac K.
+ 
+ Have fun testing and improving it! 😎
 
 
 
