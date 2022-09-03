@@ -1,10 +1,149 @@
-h1{
-    color: red;
+html {
+    height: 100%;
+    width: 100%;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #48B68D;
+    font-family: 'Lato', sans-serif;
+}
+
+
 .completed{
     text-decoration: line-through;
     color: gray;
 }
 .not{
     text-decoration: underline;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0px;
+    color: green;
+}
+
+/* Index start */
+
+.logo-img {
+    width: 500px;
+}
+
+.login-and-signup-section {
+    display: flex;
+    gap: 50px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Index end */
+
+/* login start */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+input, .login-button, .signup-button {
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.login-button, .signup-button {
+    background-color: #c1c7ce;
+}
+
+.login-button:hover, .signup-button:hover{
+    cursor: pointer;
+    background-color: #99a3ae;
+  }
+
+.login-signup-btn {
+    margin-top: 30px;
+    font-size: 15px;
+    margin: 20px;
+}
+/* Login end */
+
+/* Signup start */
+
+.signup-form, .sigin-form, .bill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    width: 50%;
+}
+
+.signup-form input, .sigin-form input {
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+.form-text {
+    gap:0px;
+    margin: 0px;
+}
+
+
+/* Signup end */
+
+/* my bills start */
+
+.bills-section {
+    display: flex;
+    justify-content: space-between;
+    gap:100px;
+    margin-top: 30px;
+}
+
+h2 {
+    font-size: 25px;
+    margin: 0px;
+    color: green;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    }
+
+.logout-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+}
+.add-bill-form input{
+    font-size: 15px;
+}
+
+/* my bills end */
+
+/* bill list */
+
+.bill-list li {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bill-list li span{
+    width: 100px;
+    height: 30px;
+    text-align: left;
 }

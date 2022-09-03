@@ -2,22 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bill Trackr</title>
 </head>
 <body>
+    <img class="logo-img" src="/images/Billtrackr-logo/cover.png" alt="">
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <form action="/signup" method="POST">
+    <form class="signup-form" action="/signup" method="POST">
+        <section class="form-text">
+            <h1>Create New Account</h1>
+            <p>Get your free BillTrackr account now</p>
+        </section>
         <input type="text" name="userName" placeholder="User Name">
         <input type="email" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="Password">
         <input type="password" name="confirmPassword" placeholder="Confirm Password">
-        <input type="submit">
+        <button type="submit" class="signup-button"> Sign Up </button>
     </form>
+    <a class="login-signup-btn" href="/login">Already have an account? Login here</a>
 </body>
 </html>
