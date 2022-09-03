@@ -6,7 +6,8 @@ module.exports = {
         try{
             const billItems = await Bill.find({userId:req.user.id})
             const itemsLeft = await Bill.countDocuments({userId:req.user.id,completed: false})
-            res.render('bills.ejs', {bills: billItems, left: itemsLeft, user: req.user})
+            //res.render('bills.ejs', {bills: billItems, left: itemsLeft, user: req.user})
+            res.redirect('/bills/unpaid')
         }catch(err){
             console.log(err)
         }
@@ -14,8 +15,7 @@ module.exports = {
     getPaid: async (req,res)=>{
         console.log(req.user)
         try{
-            const billItems = await Bill.find({userId:req.user.id, paid: true}).sort({dueDate: 1})//.toArray()
-            // const paidBills = billItems.filter(bill => bill.paid)
+            const billItems = await Bill.find({userId:req.user.id, paid: true}).sort({dueDate: 1})
             const itemsLeft = await Bill.countDocuments({userId:req.user.id,completed: false})
             res.render('paidbills.ejs', {bills: billItems, left: itemsLeft, user: req.user})
         }catch(err){
@@ -25,8 +25,7 @@ module.exports = {
     getUnpaid: async (req,res)=>{
         console.log(req.user)
         try{
-            const billItems = await Bill.find({userId:req.user.id, paid: false}).sort({dueDate: 1})//.toArray()
-            // const unpaidBills = billItems.filter(bill => !bill.paid)
+            const billItems = await Bill.find({userId:req.user.id, paid: false}).sort({dueDate: 1})
             const itemsLeft = await Bill.countDocuments({userId:req.user.id,completed: false})
             res.render('bills.ejs', {bills: billItems, left: itemsLeft, user: req.user})
         }catch(err){
@@ -38,7 +37,7 @@ module.exports = {
         try{
             await Bill.create({bill: req.body.billItem, paid: false, userId: req.user.id, dueDate: req.body.date, amount: req.body.amount})
             console.log('Bill has been added!')
-            res.redirect('/bills')
+            res.redirect('/bills/unpaid')
         }catch(err){
             console.log(err)
         }
@@ -57,10 +56,10 @@ module.exports = {
     markUnpaid: async (req, res)=>{
         try{
             await Bill.findOneAndUpdate({_id:req.body.billIdFromJSFile},{
-                completed: false
+                paid: false
             })
-            console.log('Marked Incomplete')
-            res.json('Marked Incomplete')
+            console.log('Marked Unpaid')
+            res.json('Marked Unpaid')
         }catch(err){
             console.log(err)
         }
