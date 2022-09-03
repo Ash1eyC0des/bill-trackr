@@ -40,11 +40,11 @@ express, mongoose,mongodb, bcrypt, passport, express-sessions, connect-mongo, ex
  ---
  
  From the creative genius of :
- Ashley Christman||
- Erick Alonso||
- Lucas Faustman||
- Miranda Ganger||
- Ned Park||
+ Ashley Christman,
+ Erick Alonso,
+ Lucas Faustman,
+ Miranda Ganger,
+ Ned Park,
  Issac Kees.
  
  Have fun testing and improving it! 😎
