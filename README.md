@@ -1,6 +1,6 @@
 # Introduction
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+A Simple Bill Tracker App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
 
 ---
 
@@ -16,13 +16,13 @@ A Simple ToDo App is built using the MVC Architecture, we have also implemented 
 
 # Who is this for? 
 
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
+-Created to help keep track of monthly bills and expenses. Carefully designed to be eye-catching and easy to use.
 
 ---
 
 # Packages/Dependencies used 
 
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
+express, mongoose, passport, express-sessions, connect-mongo, express-flash,morgan, dotenv, ejs,  morgan, nodemon, passport-local, and validator
 
 ---
 
@@ -40,5 +40,14 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
  ---
  
  Have fun testing and improving it! 😎
+
+ From the creative genius of :
+ Ashley Christman
+ Erick Alonso
+ Lucas Faustman 
+ Miranda Ganger
+ Ned
+ Issac K.
+
 
 
