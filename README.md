@@ -10,13 +10,13 @@ A Simple Bill Tracker App is built using the MVC Architecture, we have also impl
 
 # Objectives
 
-- It's a beginner level app created to understand how MVC concept and logins are added
+ It's a beginner level app created to understand how MVC concept and logins are added
 
 ---
 
 # Who is this for? 
 
--Created to help keep track of monthly bills and expenses. Carefully designed to be eye-catching and easy to use.
+Created to help anyone keep track of monthly bills and expenses. Carefully designed to be eye-catching and easy to use.
 
 ---
 
@@ -39,14 +39,12 @@ express, mongoose, passport, express-sessions, connect-mongo, express-flash,morg
   - DB_STRING: `your database URI` 
  ---
  
- Have fun testing and improving it! 😎
-
  From the creative genius of :
- Ashley Christman
- Erick Alonso
- Lucas Faustman 
- Miranda Ganger
- Ned
+ Ashley Christman,
+ Erick Alonso,
+ Lucas Faustman, 
+ Miranda Ganger,
+ Ned,
  Issac K.
 
 
