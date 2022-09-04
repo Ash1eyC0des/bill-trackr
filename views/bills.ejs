@@ -50,7 +50,7 @@
                     <span>Delete</span>
                     <span>Mark Paid</span>
                 </li>
-                <% bills.filter(bill => bill.paid === false).forEach( el => { %>
+                <% bills.filter(bill => bill.paid === false).sort((a, b) => a.dueDate - b.dueDate).forEach( el => { %>
                         <li class='billItem outstanding' data-id='<%=el._id%>' data-dueDate= '<%= el.dueDate.toDateString() %>'>
                             <span><%= el.bill %></span>
                             <span><%= el.amount %>$</span>
