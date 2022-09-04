@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bills</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/d5ce7117b5.js" crossorigin="anonymous"></script>
@@ -14,14 +14,14 @@
     
     <h1>My Bills</h1>
 
-    <h2><%= user.userName %> has <%= left %> bill(s) outstanding</h2>
+    <h2><%= user.userName %> has <%= bills.filter(bill => bill.paid === false).length %> bill(s) outstanding</h2>
 
     <section class="bills-section">
         
         <section class="bill-form">
-            <form class="signup-form add-bill-form" action="/todos/createTodo" method='POST'>
+            <form class="signup-form add-bill-form" action="/bills/createBill" method='POST'>
                 <h2>New Bill</h2>
-                <input type="text" placeholder="Enter bill here" name='todoItem'>
+                <input type="text" placeholder="Enter bill here" name='billItem'>
                 <input type="number" placeholder="Enter amount here" name='amount'>
                 <input type="date" placeholder="Enter pay date here" name='date'>
                 <input type="submit"> 
@@ -35,20 +35,24 @@
                     <span>Amount</span>
                     <span>Due Date</span>
                     <span>Delete</span>
+                    <span>Mark Paid</span>
                 </li>
-                <% todos.forEach( el => { %>
-                        <li class='todoItem' data-id='<%=el._id%>'>
-                            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                <% bills.filter(bill => bill.paid === false).forEach( el => { %>
+                        <li class='billItem' data-id='<%=el._id%>'>
+                            <span><%= el.bill %></span>
                             <span><%= el.amount %>$</span>
-                            <span><%= `${new Date(el.date).getDay()}/${new Date(el.date).getMonth()}` %></span>
+                            <span><%= el.dueDate.toDateString() %></span>
                             <span class='del fa-solid fa-trash'></span>
+                            <span class="not fa-solid fa-check"></span>
                         </li>
                 <% }) %>    
             </ul>
         </section>
     </section>
     <a class="logout-btn" href="/logout">Logout</a>
+    <a class="unpaid-btn" href="/bills/paid">Go to Paid Bills</a>
 
-    <script src="js/main.js"></script>
+
+    <script src="/js/main.js"></script>
 </body>
 </html>
