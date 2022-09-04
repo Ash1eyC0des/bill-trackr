@@ -35,7 +35,7 @@
                 </li>
                 <% bills.forEach( el => { %>
                         <li class='billItem' data-id='<%=el._id%>'>
-                            <span><%= el.bill %>$</span>
+                            <span><%= el.bill %></span>
                             <span><%= el.amount %>$</span>
                             <span><%= el.dueDate.toDateString() %></span>
                             <span><%= el.category %></span>
