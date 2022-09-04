@@ -30,11 +30,12 @@
                     <span>Bill</span>
                     <span>Amount</span>
                     <span>Paid Date</span>
+                    <span>Category</span>
                     <span>Delete</span>
                 </li>
                 <% bills.forEach( el => { %>
                         <li class='billItem' data-id='<%=el._id%>'>
-                            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.bill %></span>
+                            <span><%= el.bill %>$</span>
                             <span><%= el.amount %>$</span>
                             <span><%= el.dueDate.toDateString() %></span>
                             <span><%= el.category %></span>
