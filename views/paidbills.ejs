@@ -32,6 +32,7 @@
                             <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.bill %></span>
                             <span><%= el.amount %>$</span>
                             <span><%= el.dueDate.toDateString() %></span>
+                            <span><%= el.category %></span>
                             <span class='del fa-solid fa-trash'></span>
                         </li>
                 <% }) %>    

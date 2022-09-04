@@ -25,6 +25,18 @@
                 <input type="text" placeholder="Enter bill here" name='billItem'>
                 <input type="number" placeholder="Enter amount here" name='amount'>
                 <input type="date" placeholder="Enter pay date here" name='date'>
+                <select name="category">
+                    <option value="">Select Category</option>
+                    <option value="Housing">Housing</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Medical">Medical</option>             
+                    <option value="Credit Cards">Credit Cards</option>
+                    <option value="Subscriptions">Subscriptions</option>
+                    <option value="Other">Other</option>
+                </select>
+            
                 <input type="submit"> 
             </form>
         </section>
@@ -35,14 +47,16 @@
                     <span>Bill</span>
                     <span>Amount</span>
                     <span>Due Date</span>
+                    <span>Category</span>
                     <span>Delete</span>
                     <span>Mark Paid</span>
                 </li>
                 <% bills.filter(bill => bill.paid === false).forEach( el => { %>
-                        <li class='billItem' data-id='<%=el._id%>'>
+                        <li class='billItem outstanding' data-id='<%=el._id%>' data-dueDate= '<%= el.dueDate.toDateString() %>'>
                             <span><%= el.bill %></span>
                             <span><%= el.amount %>$</span>
                             <span><%= el.dueDate.toDateString() %></span>
+                            <span><%= el.category %></span>
                             <span class='del fa-solid fa-trash'></span>
                             <span class="not fa-solid fa-check"></span>
                         </li>
