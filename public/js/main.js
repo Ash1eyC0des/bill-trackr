@@ -70,6 +70,8 @@ async function markIncomplete(){
     }
 }
 
+
+// Conditional Formatting by Due Date
 const billLines = document.querySelectorAll('.outstanding')
 const todaysDate = new Date()
 
