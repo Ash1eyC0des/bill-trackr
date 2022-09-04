@@ -82,5 +82,6 @@ Array.from(billLines).forEach((el)=> {
         el.style.color = 'white'
     } else if (dueDate - todaysDate.getTime() <= 604800000) {
         el.style.backgroundColor = '#ffc107'
-    } 
+    } else
+     el.style.backgroundColor = '#E6E6E6'
 })
