@@ -18,6 +18,7 @@
     </nav>
     
     <h1 class='num-bills'><%= user.userName %> has <%= bills.filter(bill => bill.paid === false).length %> bill(s) outstanding</h1>
+    <h3>They total &dollar;<%= bills.reduce((sum, bill) => sum + (!bill.paid? bill.amount: 0), 0).toFixed(2)%></h3>
 
 
     <section class="bills-section">
