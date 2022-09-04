@@ -11,19 +11,23 @@
     <script src="https://kit.fontawesome.com/d5ce7117b5.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <nav>
+        <a class="unpaid-btn" href="/bills/paid">Go to Paid Bills</a>
+        <img src="/images/Billtrackr-logo/cover.png" alt="">
+        <a class="logout-btn" href="/logout">Logout</a>
+    </nav>
     
-    <h1>My Bills</h1>
+    <h1 class='num-bills'><%= user.userName %> has <%= bills.filter(bill => bill.paid === false).length %> bill(s) outstanding</h1>
 
-    <h2><%= user.userName %> has <%= bills.filter(bill => bill.paid === false).length %> bill(s) outstanding</h2>
 
     <section class="bills-section">
-        
+
         <section class="bill-form">
             <form class="signup-form add-bill-form" action="/bills/createBill" method='POST'>
                 <h2>New Bill</h2>
                 <input type="text" placeholder="Enter bill here" name='billItem'>
                 <input type="number" placeholder="Enter amount here" name='amount'>
-                <input type="date" placeholder="Enter pay date here" name='date'>
+                <input type="date" placeholder="Enter pay date here" name='date' class="date-input">
                 <select name="category">
                     <option value="">Select Category</option>
                     <option value="Housing">Housing</option>
@@ -36,7 +40,7 @@
                     <option value="Other">Other</option>
                 </select>
             
-                <input type="submit"> 
+                <input type="submit" class="submit-btn"> 
             </form>
         </section>
         <section class="bill-list">
@@ -63,8 +67,6 @@
             </ul>
         </section>
     </section>
-    <a class="logout-btn" href="/logout">Logout</a>
-    <a class="unpaid-btn" href="/bills/paid">Go to Paid Bills</a>
 
 
     <script src="/js/main.js"></script>

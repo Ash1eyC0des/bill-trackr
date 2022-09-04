@@ -1,5 +1,4 @@
 html {
-    height: 100%;
     width: 100%;
 }
 
@@ -10,6 +9,7 @@ body {
     justify-content: center;
     background-color: #48B68D;
     font-family: 'Lato', sans-serif;
+    margin: 0;
 }
 
   
@@ -24,7 +24,7 @@ body {
 h1 {
     font-size: 20px;
     margin: 0px;
-    color: green;
+    color: #146b43;
 }
 
 /* Index start */
@@ -61,6 +61,11 @@ input, .login-button, .signup-button {
     font-size: 20px;
 }
 
+select {
+    border-radius: 3px;
+    padding: 5px;
+}
+
 .login-button, .signup-button {
     background-color: #c1c7ce;
 }
@@ -82,12 +87,12 @@ input, .login-button, .signup-button {
 .signup-form, .sigin-form, .bill-list {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
     background-color: white;
     padding: 50px;
     border-radius: 20px;
     text-align: center;
-    width: 50%;
+    width: 60%;
 }
 
 .signup-form input, .sigin-form input {
@@ -103,19 +108,54 @@ input, .login-button, .signup-button {
 
 /* Signup end */
 
+/* Nav Start */
+nav {
+    background-color: #48B68D;
+    display:flex;
+    width: 100%;
+    padding: 1%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.unpaid-btn, .logout-btn, .submit-btn {
+    background: #146b43;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    height: 50%;
+    font-size: 1rem;
+}
+
+nav img {
+    height: 75px;
+}
+
+/* Nav End */
+
+.num-bills {
+    color: #146b43;
+    margin-top: 25px;
+    font-size: 2rem;
+}
+
+.date-input {
+    font-family: inherit;
+}
+
 /* my bills start */
 
 .bills-section {
     display: flex;
     justify-content: space-between;
     gap:100px;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
 h2 {
     font-size: 25px;
     margin: 0px;
-    color: green;
+    color: #146b43;
 }
 
 ul {
@@ -123,18 +163,8 @@ ul {
     padding: 0;
     }
 
-.logout-btn {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 10px;
-}
-.unpaid-btn {
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 10px;
-}
+
+
 .add-bill-form input{
     font-size: 15px;
 }
@@ -146,17 +176,24 @@ ul {
 .bill-list li {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .bill-list li span{
     width: 100px;
-    height: 30px;
+    padding: 7px;
     text-align: center;
 }
 
+.billItem {
+    margin: 1% 0;
+}
+
 .billItem span {
-    font-size: 10px;
-}n
+    font-size: .75rem;
+}
+
 
 
 

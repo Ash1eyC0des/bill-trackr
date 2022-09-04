@@ -12,9 +12,14 @@
 </head>
 <body>
     
-    <h1>My Bills</h1>
+    <nav>
+        <a class="unpaid-btn" href="/bills/unpaid">Go to Outstanding Bills</a>
+        <img src="/images/Billtrackr-logo/cover.png" alt="">
+        <a class="logout-btn" href="/logout">Logout</a>
+    </nav>
 
-    <h2><%= user.userName %> has paid <%= bills.length %> bills! </h2>
+
+    <h1 class="num-bills"><%= user.userName %> has paid <%= bills.length %> bill(s)! </h1>
 
     <section class="bills-section paid-bills-section">
         
@@ -39,8 +44,6 @@
             </ul>
         </section>
     </section>
-    <a class="logout-btn" href="/logout">Logout</a>
-    <a class="unpaid-btn" href="/bills/unpaid">Go to Outstanding Bills</a>
 
     <script src="/js/main.js"></script>
 </body>
