@@ -1,28 +1,25 @@
 # Introduction
 
-A Simple Bill Tracking App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, and just keep track of their bills
+A Simple Bill Tracker App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
 
 ---
 
-> Be sure to add that lovely star 😀 and fork it for your own copy
-
----
 
 # Objectives
 
-- It's a beginner level app created to understand how MVC concept and logins are added
+It's a beginner level app created to understand how MVC concept and logins are added
 
 ---
 
 # Who is this for? 
 
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
+Created to help anyone keep track of monthly bills and expenses. Carefully designed to be eye-catching and easy to use.
 
 ---
 
 # Packages/Dependencies used 
 
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
+express, mongoose,mongodb, bcrypt, passport, express-sessions, connect-mongo, express-flash, morgan, dotenv, ejs,  morgan, nodemon, passport-local, and validator
 
 ---
 
@@ -39,6 +36,15 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
   - DB_STRING: `your database URI` 
  ---
  
+ From the creative genius of :
+ Ashley Christman,
+ Erick Alonso,
+ Lucas Faustman,
+ Miranda Ganger,
+ Ned Park,
+ Issac Kees.
+ 
  Have fun testing and improving it! 😎
+
 
 
