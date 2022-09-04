@@ -70,12 +70,14 @@ async function markIncomplete(){
     }
 }
 
-const billLine = document.querySelectorAll('.billItem')
+const billLines = document.querySelectorAll('.outstanding')
+const todaysDate = new Date()
 
-// function lineColor() {
-//   const todaysDate = new Date()
-//   dueDate > (todaysDate - 7) ? billLine.backgroundColor = yellow
-//     : dueDate > (todaysDate - 3) ? billLine.backgroundColor = red  
-// }
-
-// lineColor()
+Array.from(billLines).forEach((el)=> {
+    const dueDate = Date.parse(el.dataset.duedate)
+    if (dueDate <= todaysDate.getTime()) {
+        el.style.backgroundColor = 'red'
+    } else if (dueDate - todaysDate.getTime() <= 604800000) {
+        el.style.backgroundColor = 'yellow'
+    } 
+})

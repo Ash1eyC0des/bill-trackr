@@ -35,7 +35,7 @@ module.exports = {
     createBill: async (req, res)=>{
         console.log(req.body)
         try{
-            await Bill.create({bill: req.body.billItem, paid: false, userId: req.user.id, dueDate: req.body.date, amount: req.body.amount})
+            await Bill.create({bill: req.body.billItem, paid: false, userId: req.user.id, dueDate: req.body.date, category: req.body.category, amount: req.body.amount})
             console.log('Bill has been added!')
             res.redirect('/bills/unpaid')
         }catch(err){
