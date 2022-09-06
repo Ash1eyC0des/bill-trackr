@@ -133,6 +133,10 @@ nav {
     font-size: 1rem;
 }
 
+.unpaid-btn:hover, .logout-btn:hover, .submit-btn:hover {
+    background-color: #15352a;
+}
+
 nav img {
     height: 75px;
 }
