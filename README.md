@@ -40,7 +40,6 @@ In the future, we would love to add the following additions:
 
 - Coordination/Communication - We worked asynchronously to develop Billtrackr and assigned features to different contributers. It was a challenge making sure that there was not Github conflicts, so we all learned the importance of clear duties for each contributer.
 - Meeting a deadline - Since all contributers had a deadline on this project, we had to decide which features were necessary for the MVP of the app. Some features have been put on hold, with the possibility of new features coming in the future.
-- 
 
 ---
 
