@@ -26,7 +26,7 @@ express, mongoose,mongodb, bcrypt, passport, express-sessions, connect-mongo, ex
 
 ---
 
-# How it's Made
+# Optimizations
 
 In the future, we would love to add the following additions:
 
