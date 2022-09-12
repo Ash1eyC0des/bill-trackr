@@ -1,51 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-mountain-meadow">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bill Trackr | Paid Bills</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link href="/css/dist/output.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        transparent: "transparent",
+                        current: "currentColor",
+                        white: "#FFF",
+                        "mountain-meadow": {
+                            DEFAULT: "#10B981",
+                            100: "#E9FDE5",
+                            200: "#B1F8B1",
+                            300: "#7EF491",
+                            400: "#4AEF81",
+                            500: "#16EB81",
+                            600: "#10B981",
+                            700: "#0D9881",
+                            800: "#0A7777",
+                            900: "#074956",
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <title>Paid Bills | Bill Trackr</title>
 
-    <!-- font awesome -->
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/d5ce7117b5.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
-    <nav>
-        <a class="unpaid-btn" href="/bills/unpaid">Go to Outstanding Bills</a>
-        <img src="/images/Billtrackr-logo/cover.png" alt="">
-        <a class="logout-btn" href="/logout">Logout</a>
+
+    <nav class="flex justify-around items-center mt-6">
+        <a class="bg-mountain-meadow-800 hover:bg-mountain-meadow-900 text-white text-lg rounded-full px-6 py-2 shadow-lg"
+            href="/bills/unpaid">Go to Unpaid Bills</a>
+        <img src="/images/Billtrackr-logo/cover.png" alt="" class="w-2/12">
+        <a class="bg-mountain-meadow-800 hover:bg-mountain-meadow-900 text-white text-lg rounded-full px-6 py-2 shadow-lg"
+            href="/logout">Logout</a>
     </nav>
 
+    <h1 class="text-center text-2xl mt-4 text-mountain-meadow-900">
+        Hi <%= user.userName %>, you have paid <%= bills.length %> bill(s)!
+    </h1>
 
-    <h1 class="num-bills"><%= user.userName %> has paid <%= bills.length %> bill(s)! </h1>
+    <section class="w-9/12 bg-white rounded-xl shadow-lg py-6 flex flex-col justify-between mx-auto mt-6">
+            <h2 class="text-center text-2xl text-mountain-meadow-900 mb-4"><strong>Paid Bills</strong></h2>
 
-    <section class="bills-section paid-bills-section">
-        
-        <section class="bill-list paid-bills">
-            <h2>My Paid Bills</h2>
-            <ul>
-                <li class="paid-bills-heading">
-                    <span>Bill</span>
-                    <span>Amount</span>
-                    <span>Paid Date</span>
-                    <span>Category</span>
-                    <span>Delete</span>
-                </li>
-                <% bills.forEach( el => { %>
-                        <li class='billItem' data-id='<%=el._id%>'>
-                            <span><%= el.bill %></span>
-                            <span><%= el.amount %>$</span>
-                            <span><%= el.dueDate.toDateString() %></span>
-                            <span><%= el.category %></span>
-                            <span class='del fa-solid fa-trash'></span>
-                        </li>
-                <% }) %>    
+            <ul class="w-10/12 mx-auto text-center">
+                    <li class="border-0 border-b-2 border-gray-200 text-mountain-meadow-900 flex justify-around font-bold">
+                        <span class="py-3 w-2/12 text-left pl-3">Bill</span>
+                        <span class="py-3 w-2/12">Amount</span>
+                        <span class="py-3 w-2/12">Date Paid</span>
+                        <span class="py-3 w-2/12">Category</span>
+                        <span class="py-3 w-2/12">Delete</span>
+                    </li>
+                <% bills.forEach( el=> { %>
+                    <li class='border-0 border-b-2 border-gray-200 hover:bg-gray-100 flex justify-around' data-id='<%=el._id%>'>
+                        <span class="py-3 w-2/12 text-left pl-3">
+                            <%= el.bill %>
+                        </span>
+                        <span class="py-3 w-2/12">
+                            $<%= el.amount %>
+                        </span>
+                        <span class="py-3 w-2/12">
+                            <%= el.paidDate.toDateString() %>
+                        </span>
+                        <span class="py-3 w-2/12">
+                            <%= el.category %>
+                        </span>
+                        <span class='del py-3 text-mountain-meadow-900 hover:text-red-700 w-2/12'><i class="fa-solid fa-trash"></i></span>
+                    </li>
+                    <% }) %>
             </ul>
-        </section>
     </section>
 
     <script src="/js/main.js"></script>
 </body>
+
 </html>

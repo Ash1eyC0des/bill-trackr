@@ -1,22 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="bg-mountain-meadow">
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link href="/css/dist/output.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        transparent: "transparent",
+                        current: "currentColor",
+                        white: "#FFF",
+                        "mountain-meadow": {
+                            DEFAULT: "#10B981",
+                            100: "#E9FDE5",
+                            200: "#B1F8B1",
+                            300: "#7EF491",
+                            400: "#4AEF81",
+                            500: "#16EB81",
+                            600: "#10B981",
+                            700: "#0D9881",
+                            800: "#0A7777",
+                            900: "#074956",
+                        },
+                    },
+                },
+            },
+        }
+    </script>
     <title>Bill Trackr</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/d5ce7117b5.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <img class="logo-img" src="/images/Billtrackr-logo/cover.png" alt="">
-    <section class="login-and-signup-section">
-        <a href="/login"> Login</a>
-        <a href="/signup"> Signup</a>
-    </section>
+    <div class="w-6/12 bg-white rounded-xl py-16 m-auto mt-16 shadow-xl">
+    <div>
+        <a href="/"><img class="w-7/12 mx-auto" src="/images/Billtrackr-logo/logo-main.png" alt=""></a>
+        <h1 class="text-center text-2xl mt-8 text-mountain-meadow-900">A simple, <em>intuitive</em> bill tracker.</h1>
+    </div>
+    <nav class="mt-16">
+        <ul class="flex justify-around w-4/12 mx-auto">
+            <li><a href="/login" class="bg-mountain-meadow-700 hover:bg-mountain-meadow-800 text-white text-lg rounded-full px-6 py-2 shadow-lg"> Login</a></li>
+            <li><a href="/signup" class="bg-mountain-meadow-700 hover:bg-mountain-meadow-800 text-white text-lg rounded-full px-6 py-2 shadow-lg"> Signup</a></li>
+        </ul>
+    </nav>
+</div>
 </body>
+
 </html>

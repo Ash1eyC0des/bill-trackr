@@ -1,75 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-mountain-meadow">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link href="/css/dist/output.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        transparent: "transparent",
+                        current: "currentColor",
+                        white: "#FFF",
+                        "mountain-meadow": {
+                            DEFAULT: "#10B981",
+                            100: "#E9FDE5",
+                            200: "#B1F8B1",
+                            300: "#7EF491",
+                            400: "#4AEF81",
+                            500: "#16EB81",
+                            600: "#10B981",
+                            700: "#0D9881",
+                            800: "#0A7777",
+                            900: "#074956",
+                        },
+                    },
+                },
+            },
+        }
+    </script>
     <title>Outstanding Bills | Bill Trackr</title>
-    <link rel="stylesheet" href="/css/style.css">
 
-    <!-- font awesome -->
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/d5ce7117b5.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <nav>
-        <a class="unpaid-btn" href="/bills/paid">Go to Paid Bills</a>
-        <img src="/images/Billtrackr-logo/cover.png" alt="">
-        <a class="logout-btn" href="/logout">Logout</a>
+    <nav class="flex justify-around items-center mt-6">
+        <a class="bg-mountain-meadow-800 hover:bg-mountain-meadow-900 text-white text-lg rounded-full px-6 py-2 shadow-lg"
+            href="/bills/paid">Go to Paid Bills</a>
+        <img src="/images/Billtrackr-logo/cover.png" alt="" class="w-2/12">
+        <a class="bg-mountain-meadow-800 hover:bg-mountain-meadow-900 text-white text-lg rounded-full px-6 py-2 shadow-lg"
+            href="/logout">Logout</a>
     </nav>
-    
-    <h1 class='num-bills'>Hi <%= user.userName %>, you have <%= bills.filter(bill => bill.paid === false).length %> bill(s) outstanding.</h1>
-    <h3>They total &dollar;<%= bills.reduce((sum, bill) => sum + (!bill.paid? bill.amount: 0), 0).toFixed(2)%></h3>
+
+    <h1 class="text-center text-2xl mt-4 text-mountain-meadow-900">Hi <%= user.userName %>, you have <%=
+                bills.filter(bill=> bill.paid === false).length %> outstanding bill(s) totaling &dollar;<%=
+                    bills.reduce((sum, bill)=> sum + (!bill.paid? bill.amount: 0), 0).toFixed(2)%>.</h1>
 
 
-    <section class="bills-section">
+    <section class="flex justify-around mt-6">
 
-        <section class="bill-form">
-            <form class="signup-form add-bill-form" action="/bills/createBill" method='POST'>
-                <h2>New Bill</h2>
-                <input type="text" placeholder="Enter bill here" name='billItem'>
-                <input type="number" placeholder="Enter amount here" name='amount'>
-                <input type="date" placeholder="Enter pay date here" name='date' class="date-input">
-                <select name="category">
+        <section class="w-3/12 bg-white rounded-xl shadow-lg flex flex-col content-around py-6">
+            <form class="flex flex-col content-around w-9/12 mx-auto" action="/bills/createBill" method='POST'>
+                <h2 class="text-center text-2xl text-mountain-meadow-900 mb-4"><strong>New Bill</strong></h2>
+
+                <label class="text-mountain-meadow-800 mt-3">Bill Name
+                    <input type="text" name='billItem' class="
+                    mb-4
+                    mx-auto
+                    p-2
+                    block
+                    w-full
+                    border-0 border-b-2 border-gray-200
+                    focus:ring-0 focus:border-mountain-meadow-900 focus:outline-none
+                "></label>
+
+                <label class="text-mountain-meadow-800 mt-3">Amount
+                    <input type="number" step="0.01" min="0" name='amount' onchange="setTwoNumberDecimal(this)" class="
+                    mb-4
+                    mx-auto
+                    p-2
+                    block
+                    w-full
+                    border-0 border-b-2 border-gray-200
+                    focus:ring-0 focus:border-mountain-meadow-900 focus:outline-none
+                "></label>
+
+                <label class="text-mountain-meadow-800 mt-3">Due Date
+                    <input type="date" name='date' class="
+                    mb-4
+                    mx-auto
+                    p-2
+                    block
+                    w-full
+                    border-0 border-b-2 border-gray-200
+                    focus:ring-0 focus:border-mountain-meadow-900 focus:outline-none
+                "></label>
+
+                <select name="category" class="
+                    text-mountain-meadow-800
+                    mt-6
+                    mb-4
+                    mx-auto
+                    p-2
+                    block
+                    w-full
+                    border-0 border-b-2 border-gray-200
+                    focus:ring-0 focus:border-mountain-meadow-900 focus:outline-none
+                ">
                     <option value="">Select Category</option>
                     <option value="Housing">Housing</option>
                     <option value="Utilities">Utilities</option>
                     <option value="Transportation">Transportation</option>
                     <option value="Insurance">Insurance</option>
-                    <option value="Medical">Medical</option>             
+                    <option value="Medical">Medical</option>
                     <option value="Credit Cards">Credit Cards</option>
                     <option value="Subscriptions">Subscriptions</option>
                     <option value="Other">Other</option>
                 </select>
-            
-                <input type="submit" class="submit-btn"> 
+
+                <input type="submit"
+                    class="bg-mountain-meadow-800 hover:bg-mountain-meadow-900 text-white text-lg rounded-full px-6 py-2 shadow-lg mt-8 "
+                    value="Add">
             </form>
         </section>
-        <section class="bill-list">
-            <h2>My Outstanding Bills</h2>
-            <ul>
-                <li class="bill-headings">
-                    <span>Bill</span>
-                    <span>Amount</span>
-                    <span>Due Date</span>
-                    <span>Category</span>
-                    <span>Delete</span>
-                    <span>Mark Paid</span>
-                </li>
-                <% bills.filter(bill => bill.paid === false).sort((a, b) => a.dueDate - b.dueDate).forEach( el => { %>
-                        <li class='billItem outstanding' data-id='<%=el._id%>' data-dueDate= '<%= el.dueDate.toDateString() %>'>
-                            <span><%= el.bill %></span>
-                            <span><%= el.amount %>$</span>
-                            <span><%= el.dueDate.toDateString() %></span>
-                            <span><%= el.category %></span>
-                            <span class='del fa-solid fa-trash'></span>
-                            <span class="not fa-solid fa-check"></span>
-                        </li>
-                <% }) %>    
-            </ul>
+        <section class="w-7/12 bg-white rounded-xl shadow-lg py-6 flex flex-col justify-between">
+            <h2 class="text-center text-2xl text-mountain-meadow-900 mb-4"><strong>Outstanding Bills</strong></h2>
+            <table class="table-auto w-10/12 mx-auto text-center">
+                <thead class="text-mountain-meadow-900">
+                    <tr class="border-0 border-b-2 border-gray-200">
+                        <th class="text-left pl-3 py-3">Bill</th>
+                        <th class="py-3">Amount</th>
+                        <th class="py-3">Due Date</th>
+                        <th class="py-3">Category</th>
+                        <th class="py-3">Delete</th>
+                        <th class="py-3">Mark Paid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% bills.filter(bill=> bill.paid === false).sort((a, b) => a.dueDate - b.dueDate).forEach( el => { %>
+                        <tr class='outstanding border-0 border-b-2 border-gray-200 hover:bg-gray-100' data-id='<%=el._id%>' data-dueDate='<%= el.dueDate.toDateString() %>'>
+                            <td class="text-left pl-3 py-3">
+                                <%= el.bill %>
+                            </td>
+                            <td class="py-3">
+                                $<%= el.amount %>
+                            </td>
+                            <td class="py-3">
+                                <%= el.dueDate.toDateString() %>
+                            </td>
+                            <td class="py-3">
+                                <%= el.category %>
+                            </td>
+                            <td class='del py-3 text-mountain-meadow-900 hover:text-red-700'><i class='fa-solid fa-trash'></i></td>
+                            <td class="not py-3 text-mountain-meadow-900 hover:text-mountain-meadow"><i class="fa-solid fa-check"></i></td>
+                        </tr>
+                        <% }) %>    
+                </tbody>
+            </table>
+            <div class="w-12/12 text-center">
+                <small><span class="text-red-700"><strong>Red</strong></span> denotes a bill that is past due. <span class="text-orange-300"><strong>Yellow</strong></span> denotes a bill that is due in the next week.</small>
+            </div>
         </section>
     </section>
 
 
     <script src="/js/main.js"></script>
 </body>
+
 </html>
