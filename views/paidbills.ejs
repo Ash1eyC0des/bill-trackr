@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-mountain-meadow">
+<html lang="en" class="bg-trackr">
 
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
                         transparent: "transparent",
                         current: "currentColor",
                         white: "#FFF",
-                        "mountain-meadow": {
+                        "trackr": {
                             DEFAULT: "#10B981",
                             100: "#E9FDE5",
                             200: "#B1F8B1",
@@ -42,25 +42,25 @@
     <script src="https://kit.fontawesome.com/d5ce7117b5.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="pb-10">
 
-    <nav class="flex justify-around items-center mt-6">
-        <a class="bg-mountain-meadow-800 hover:bg-mountain-meadow-900 text-white text-lg rounded-full px-6 py-2 shadow-lg"
+    <nav class="flex flex-col lg:flex-row justify-around items-center mt-6">
+        <img src="/images/Billtrackr-logo/cover.png" alt="" class="w-8/12 lg:w-2/12 lg:order-2 ">
+        <a class="bg-trackr-800 hover:bg-trackr-900 text-white text-lg rounded-full px-6 py-2 shadow-lg lg:block lg:order-1 mt-2 lg:mt-0"
             href="/bills/unpaid">Go to Unpaid Bills</a>
-        <img src="/images/Billtrackr-logo/cover.png" alt="" class="w-2/12">
-        <a class="bg-mountain-meadow-800 hover:bg-mountain-meadow-900 text-white text-lg rounded-full px-6 py-2 shadow-lg"
+        <a class="bg-trackr-800 hover:bg-trackr-900 text-white text-lg rounded-full px-6 py-2 shadow-lg lg:order-3  mt-2 lg:mt-0"
             href="/logout">Logout</a>
     </nav>
 
-    <h1 class="text-center text-2xl mt-4 text-mountain-meadow-900">
+    <h1 class="text-center text-2xl mt-5 text-trackr-900 leading-relaxed px-2">
         Hi <%= user.userName %>, you have paid <%= bills.length %> bill(s)!
     </h1>
 
-    <section class="w-9/12 bg-white rounded-xl shadow-lg py-6 flex flex-col justify-between mx-auto mt-6">
-            <h2 class="text-center text-2xl text-mountain-meadow-900 mb-4"><strong>Paid Bills</strong></h2>
+    <section class="w-11/12 lg:w-9/12 bg-white rounded-xl shadow-lg py-6 flex flex-col lg:flex-row items-center justify-between mx-auto mt-6">
+            <h2 class="text-center text-2xl text-trackr-900 mb-4"><strong>Paid Bills</strong></h2>
 
-            <ul class="w-10/12 mx-auto text-center">
-                    <li class="border-0 border-b-2 border-gray-200 text-mountain-meadow-900 flex justify-around font-bold">
+            <ul class="w-11/12 mx-auto text-center">
+                    <li class="border-0 border-b-2 border-gray-200 text-trackr-900 hidden lg:flex lg:justify-around font-bold">
                         <span class="py-3 w-2/12 text-left pl-3">Bill</span>
                         <span class="py-3 w-2/12">Amount</span>
                         <span class="py-3 w-2/12">Date Paid</span>
@@ -68,20 +68,20 @@
                         <span class="py-3 w-2/12">Delete</span>
                     </li>
                 <% bills.forEach( el=> { %>
-                    <li class='border-0 border-b-2 border-gray-200 hover:bg-gray-100 flex justify-around' data-id='<%=el._id%>'>
-                        <span class="py-3 w-2/12 text-left pl-3">
+                    <li class='border-0 border-b-2 border-gray-200 hover:bg-gray-100 flex justify-between flex-wrap lg:flex-nowrap' data-id='<%=el._id%>'>
+                        <span class="py-1 lg:py-3 w-6/12 lg:w-2/12 lg:text-left lg:pl-3 font-bold lg:font-normal">
                             <%= el.bill %>
                         </span>
-                        <span class="py-3 w-2/12">
+                        <span class="py-1 lg:py-3 w-6/12 lg:w-2/12 font-bold lg:font-normal">
                             $<%= el.amount %>
                         </span>
-                        <span class="py-3 w-2/12">
+                        <span class="py-1 lg:py-3 w-6/12 lg:w-2/12">
                             <%= el.paidDate.toDateString() %>
                         </span>
-                        <span class="py-3 w-2/12">
+                        <span class="py-1 lg:py-3 w-6/12 lg:w-2/12">
                             <%= el.category %>
                         </span>
-                        <span class='del py-3 text-mountain-meadow-900 hover:text-red-700 w-2/12'><i class="fa-solid fa-trash"></i></span>
+                        <span class='del py-1 lg:py-3 text-trackr-900 hover:text-red-700  w-full lg:w-1/12'><i class="fa-solid fa-trash"></i></span>
                     </li>
                     <% }) %>
             </ul>
