@@ -7,7 +7,7 @@ module.exports = {
         transparent: "transparent",
         current: "currentColor",
         white: "#FFF",
-        "mountain-meadow": {
+        "trackr": {
           DEFAULT: "#10B981",
           100: "#E9FDE5",
           200: "#B1F8B1",
