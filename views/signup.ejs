@@ -1,33 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-trackr">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet" type="text/css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link href="/css/dist/output.css" rel="stylesheet" type="text/css">
+
     <title>Sign Up | Bill Trackr</title>
 </head>
-<body>
-    <img class="logo-img" src="/images/Billtrackr-logo/cover.png" alt="">
-    <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
-    <form class="signup-form" action="/signup" method="POST">
-        <section class="form-text">
-            <h1>Create New Account</h1>
-            <p>Get your free BillTrackr account now</p>
-        </section>
-        <input type="text" name="userName" placeholder="User Name">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="confirmPassword" placeholder="Confirm Password">
-        <button type="submit" class="signup-button"> Sign Up </button>
+
+<body  class="pb-10">
+    <%- include('partials/flash.ejs') %>
+    <div class="w-11/12 lg:w-6/12 bg-white rounded-xl py-16 m-auto mt-16 shadow-xl">
+        <div>
+            <a href="/"><img class="w-5/12 mx-auto" src="/images/Billtrackr-logo/cover.png" alt=""></a>
+            <h1 class="text-center text-2xl mt-6 text-trackr-900">Create New Account</h1>
+            <p class="text-center text-m mt-3 text-trackr-900">Get your free BillTrackr account now</p>
+        </div>
+    <form class="" action="/signup" method="POST">
+        <input type="text" name="userName" placeholder="Username" class="
+        text-trackr-600
+        mt-1
+        mx-auto
+        p-2
+        block
+        w-10/12
+        lg:w-7/12
+        border-0 border-b-2 border-gray-200
+        focus:ring-gray-200
+        ">
+        <input type="email" name="email" placeholder="Email" class="
+        text-trackr-600
+        mt-1
+        mx-auto
+        p-2
+        block
+        w-10/12
+        lg:w-7/12
+        border-0 border-b-2 border-gray-200
+        focus:ring-gray-200
+        ">
+        <input type="password" name="password" placeholder="Password" class="
+        text-trackr-600
+        mt-1
+        mx-auto
+        p-2
+        block
+        w-10/12
+        lg:w-7/12
+        border-0 border-b-2 border-gray-200
+        focus:ring-gray-200
+        ">
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" class="
+        text-trackr-600
+        mt-1
+        mx-auto
+        p-2
+        block
+        w-10/12
+        lg:w-7/12
+        border-0 border-b-2 border-gray-200
+        focus:ring-gray-200
+        ">
+        <button type="submit" class="block mx-auto mt-5 bg-trackr-700 hover:bg-trackr-800 text-white text-lg rounded-full px-6 py-2 shadow-lg w-10/12 lg:w-4/12"> Sign Up </button>
     </form>
-    <a class="login-signup-btn" href="/login">Already have an account? Login here</a>
+    <p class="text-center text-m mt-10 text-trackr-900">Already have an account? <a class="text-trackr-700 hover:text-trackr-500" href="/login">Login here</a></p>
+    </div>
 </body>
+
 </html>

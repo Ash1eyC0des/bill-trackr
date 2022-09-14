@@ -78,10 +78,14 @@ const todaysDate = new Date()
 Array.from(billLines).forEach((el)=> {
     const dueDate = Date.parse(el.dataset.duedate)
     if (dueDate <= todaysDate.getTime()) {
-        el.style.backgroundColor = '#dc3545'
-        el.style.color = 'white'
+        // el.style.backgroundColor = '#dc3545'
+        el.style.color = '#dc3545'
     } else if (dueDate - todaysDate.getTime() <= 604800000) {
-        el.style.backgroundColor = '#ffc107'
+        el.style.color = '#ffbd59'
     } else
-     el.style.backgroundColor = '#E6E6E6'
+     el.style.color = '#074956'
 })
+
+function setTwoNumberDecimal(el) {
+    el.value = parseFloat(el.value).toFixed(2);
+};

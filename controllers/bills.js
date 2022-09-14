@@ -45,7 +45,8 @@ module.exports = {
     markPaid: async (req, res)=>{
         try{
             await Bill.findOneAndUpdate({_id:req.body.billIdFromJSFile},{
-                paid: true
+                paid: true,
+                paidDate: Date.now(),
             })
             console.log('Marked Paid')
             res.json('Marked Paid')
