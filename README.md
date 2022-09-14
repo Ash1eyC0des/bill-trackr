@@ -24,7 +24,7 @@ Created to help anyone keep track of monthly bills and expenses. Carefully desig
 
 # How it's Made
 
-express, mongoose,mongodb, bcrypt, passport, express-sessions, connect-mongo, express-flash, morgan, dotenv, ejs,  morgan, nodemon, passport-local, and validator
+express, mongoose,mongodb, bcrypt, passport, express-sessions, connect-mongo, express-flash, morgan, dotenv, ejs,  morgan, nodemon, passport-local, validator, and tailwind
 
 ---
 
@@ -32,7 +32,6 @@ express, mongoose,mongodb, bcrypt, passport, express-sessions, connect-mongo, ex
 
 In the future, we would love to add the following additions:
 
-- Add a CSS framework like Boostrap for styling
 - Add monthly routes so users can organize bills by month
 - Add sorting, filtering, and search for bills
 
