@@ -1,3 +1,5 @@
+![Bill Trackr](/public/images/readmelogo.png "Bill Trackr App")
+
 # Introduction
 
 A Simple Bill Tracker App is built using the MVC Architecture, we have also implemented login authorization so users can login and track their unique bills.
