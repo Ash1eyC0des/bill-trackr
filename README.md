@@ -44,20 +44,7 @@ In the future, we would love to add the following additions:
 
 ---
 
-# Install all the dependencies or node packages used for development via Terminal
-
-`npm install` 
-
----
-
-# Things to add
-
-- Create a `.env` file and add the following as `key: value` 
-  - PORT: 2121 (can be any port example: 3000) 
-  - DB_STRING: `your database URI` 
- ---
- 
- From the creative genius of :
+ ## From the creative genius of :
  Ashley Christman,
  Erick Alonso,
  Lucas Faustman,
@@ -65,7 +52,7 @@ In the future, we would love to add the following additions:
  Ned Park,
  Issac Kees.
  
- Have fun testing and improving it! 😎
+ Have fun testing! 😎
 
 
 
