@@ -28,7 +28,7 @@
 
     <h1 class="text-center text-2xl mt-5 text-trackr-900 leading-relaxed px-2">Hi <%= user.userName %>, you have <span class="bg-trackr-300 rounded-lg px-2"><%=
                 bills.filter(bill=> bill.paid === false).length %></span> outstanding bill(s) totaling <span class="bg-trackr-300 rounded-lg px-2">&dollar;<%=
-                    bills.reduce((sum, bill)=> sum + (!bill.paid? bill.amount: 0), 0).toFixed(2)%>.</span></h1>
+                    bills.reduce((sum, bill)=> sum + (!bill.paid? bill.amount: 0), 0).toFixed(2)%></span></h1>
 
 
     <section class="flex flex-col lg:flex-row items-center justify-around mt-7">
