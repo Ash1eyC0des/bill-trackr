@@ -4,7 +4,7 @@
 
 A Simple Bill Tracker App is built using the MVC Architecture, we have also implemented login authorization so users can login and track their unique bills.
 
-Link to project: https://bill-trackr.herokuapp.com/
+Link to project: https://bill-trackr.up.railway.app/
 
 Demo Login: demo@demo.com Password: demodemo
 
