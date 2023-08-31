@@ -4,15 +4,13 @@
 
 A Simple Bill Tracker App is built using the MVC Architecture, we have also implemented login authorization so users can login and track their unique bills.
 
-Link to project: https://bill-trackr.onrender.com/
-
-Demo Login: demo@demo.com Password: demodemo
+Project isn't currently hosted.
 
 ---
 
 # Objectives
 
-It's a bill tracking app app created to understand MVC architecture and user authentication.
+It's a bill tracking app created to understand MVC architecture and user authentication.
 
 ---
 
